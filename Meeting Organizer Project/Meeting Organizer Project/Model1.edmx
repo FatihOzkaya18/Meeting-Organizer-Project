@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MeetingOrganizerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Toplanti">
+          <Key>
+            <PropertyRef Name="toplanti_id" />
+          </Key>
+          <Property Name="toplanti_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="toplanti_konusu" Type="nvarchar" MaxLength="50" />
+          <Property Name="tarih" Type="nvarchar" MaxLength="50" />
+          <Property Name="bas_saati" Type="nvarchar" MaxLength="50" />
+          <Property Name="bit_saati" Type="nvarchar" MaxLength="50" />
+          <Property Name="katilimcilar" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="MeetingOrganizerModelStoreContainer">
+          <EntitySet Name="Toplanti" EntityType="Self.Toplanti" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MeetingOrganizerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Toplanti">
+          <Key>
+            <PropertyRef Name="toplanti_id" />
+          </Key>
+          <Property Name="toplanti_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="toplanti_konusu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tarih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bas_saati" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bit_saati" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="katilimcilar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="MeetingOrganizerEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Toplanti" EntityType="Self.Toplanti" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MeetingOrganizerModelStoreContainer" CdmEntityContainer="MeetingOrganizerEntities">
+          <EntitySetMapping Name="Toplanti">
+            <EntityTypeMapping TypeName="MeetingOrganizerModel.Toplanti">
+              <MappingFragment StoreEntitySet="Toplanti">
+                <ScalarProperty Name="toplanti_id" ColumnName="toplanti_id" />
+                <ScalarProperty Name="toplanti_konusu" ColumnName="toplanti_konusu" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="bas_saati" ColumnName="bas_saati" />
+                <ScalarProperty Name="bit_saati" ColumnName="bit_saati" />
+                <ScalarProperty Name="katilimcilar" ColumnName="katilimcilar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
